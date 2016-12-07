@@ -4,7 +4,7 @@
   {{#each model as |reminder|}}
     <li class="spec-reminder-item">
       <div>{{#link-to 'reminders.reminder' reminder.id}} {{reminder.title}} {{/link-to}}</div>
-      <div>Date: {{reminder.date}}</div>
+      <div>{{reminder.date}}</div>
     </li>
   {{/each}}
 </ul>
