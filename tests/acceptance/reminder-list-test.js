@@ -18,11 +18,11 @@ test('viewing the homepage', function(assert) {
   });
 });
 
-skip('clicking on an individual item', function(assert) {
+test('clicking on an individual item', function(assert) {
   server.createList('reminder', 5);
 
   visit('/reminders');
-  click('.spec-reminder-item');
+  click('.spec-reminder-item:first');
 
   andThen(function() {
     assert.equal(currentURL(), '/reminders/1');
