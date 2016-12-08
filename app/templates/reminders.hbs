@@ -7,6 +7,5 @@
     </li>
   {{/each}}
 </ul>
-<button>Create New Reminder</button>
-
+<button {{action "createNewReminder"}}> {{#link-to 'reminders.new'}} Create New Reminder {{/link-to}} </button>
 {{outlet}}
