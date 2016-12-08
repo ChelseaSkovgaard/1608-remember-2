@@ -2,10 +2,10 @@
 <ul>
   {{#each model as |reminder|}}
     <li >
-      {{#link-to 'reminders.reminder' reminder.id class="spec-reminder-item"}} {{reminder.title}} {{/link-to}}
+      {{#link-to 'reminders.reminder' reminder.id class='spec-reminder-item'}} {{reminder.title}} {{/link-to}}
       <div>{{reminder.date}}</div>
     </li>
   {{/each}}
 </ul>
-<button {{action "createNewReminder"}}> {{#link-to 'reminders.new'}} Create New Reminder {{/link-to}} </button>
+<button class='create-new-reminder-btn'> {{#link-to 'reminders.new' class='spec-create-new-reminder-btn'}} Create New Reminder {{/link-to}} </button>
 {{outlet}}
