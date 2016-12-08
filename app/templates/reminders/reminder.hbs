@@ -1,9 +1,7 @@
-<ul>
-  <li class="spec-reminder-item">
-    <div> Title: {{model.title}}</div>
-    <div> Date: {{model.date}}</div>
-    <div> Notes: {{model.notes}} </div>
-  </li>
-</ul>
+<section class="spec-individual-reminder-item">
+  <h3 class='spec-reminder-title'> {{model.title}}</h3>
+  <div> {{model.date}}</div>
+  <div> {{model.notes}}</div>
+</section>
 
-{outlet}}
+{{outlet}}
