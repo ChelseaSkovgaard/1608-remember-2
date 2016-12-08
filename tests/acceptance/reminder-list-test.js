@@ -40,6 +40,7 @@ test('clicking the create new reminder button redirects the url', function(asser
     assert.equal(currentURL(), '/reminders/new');
     assert.equal(find('.new-reminder-input').length, 3);
   });
+});
 
 test('clicking the save reminder button renders a new reminder', function(assert){
     server.createList('reminder', 5);
@@ -53,5 +54,5 @@ test('clicking the save reminder button renders a new reminder', function(assert
     click('.spec-save-reminder-btn');
     andThen(function(){
       assert.equal(find('.spec-reminder-item').length, 1)
-    })
+    });
   });
