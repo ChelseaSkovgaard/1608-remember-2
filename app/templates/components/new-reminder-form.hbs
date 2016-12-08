@@ -1,13 +1,13 @@
 <form class='save-new-reminder-form' {{action "saveNewReminder" on='submit'}}>
 <label> Title
-{{input class="spec-title-input" value=title}}
+{{input class="new-reminder-input spec-title-input" value=title}}
 </label>
 <label> Date
-{{input class="spec-date-input" value=date type='date'}}
+{{input class="new-reminder-input spec-date-input" value=date type='date'}}
 </label>
 <label> Notes
-{{input class="spec-note-input" value=notes}}
+{{input class="new-reminder-input spec-note-input" value=notes}}
 </label>
-<button> Save Reminder </button>
+<button class="spec-save-reminder-btn"> Save Reminder </button>
 </form>
 {{outlet}}
