@@ -1,7 +1,9 @@
 <section class="spec-individual-reminder-item">
   <h3 class='spec-reminder-title'> {{model.title}}</h3>
   <div> {{model.date}}</div>
-  <div> {{model.notes}}</div>
+  {{#if model.notes}}
+  <div> Notes: {{model.notes}}</div>
+  {{/if}}
 </section>
 
 {{outlet}}
