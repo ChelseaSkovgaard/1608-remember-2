@@ -3,5 +3,11 @@
 }
 
 .spec-individual-reminder-item {
-  background-color: papayawhip; 
+  background-color: papayawhip;
+}
+
+.new-reminder-input {
+  display: block;
+  padding: 5px;
+  margin: 10px;
 }

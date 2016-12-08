@@ -1,0 +1,13 @@
+<form class='save-new-reminder-form' {{action "saveNewReminder" on='submit'}}>
+<label> Title
+{{input class="new-reminder-input spec-title-input" value=title}}
+</label>
+<label> Date
+{{input class="new-reminder-input spec-date-input" value=date type='date'}}
+</label>
+<label> Notes
+{{input class="new-reminder-input spec-note-input" value=notes}}
+</label>
+<button class="spec-save-reminder-btn"> Save Reminder </button>
+</form>
+{{outlet}}
