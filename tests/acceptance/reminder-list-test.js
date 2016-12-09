@@ -49,9 +49,17 @@ test('clicking the save reminder button renders a new reminder', function(assert
     andThen(function() {
       assert.equal(currentURL(), '/reminders/new');
     });
-
+    fillIn('.spec-title-input', 'New Reminder');
+    fillIn('.spec-date-input', '2016-12-10');
+    fillIn('.spec-note-input', 'Do not forget!');
     click('#spec-save-reminder-btn');
     andThen(function(){
-      assert.equal(find('.spec-reminder-item').length, 1);
+      assert.equal(find('.spec-reminder-item').length, 1, 'should show one newly added reminder');
+    });
+    click('.spec-reminder-item');
+    andThen(function(){
+      assert.equal(find('.spec-reminder-title').text().trim(), 'New Reminder', 'should show new reminder title');
+      assert.equal(find('.spec-reminder-date').text().trim(), 'Fri Dec 09 2016 17:00:00 GMT-0700 (MST)', 'should show formatted date');
+      assert.equal(find('.spec-reminder-notes').text().trim(), 'Do not forget!', 'should show new reminder notes');
     });
   });
