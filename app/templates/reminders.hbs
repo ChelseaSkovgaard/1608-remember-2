@@ -1,14 +1,15 @@
-{{#if model}}
+<section class="reminer-list">
+  {{#if model}}
   <h2> Reminder List </h2>
   <ul>
-    {{#each model as |reminder|}}
-      <li >
-        {{#link-to 'reminders.reminder' reminder.id class='spec-reminder-item'}}
-        {{reminder.title}}
-        {{/link-to}}
-        <div>{{reminder.date}}</div>
-      </li>
-    {{/each}}
+      {{#each model as |reminder|}}
+        <li >
+          {{#link-to 'reminders.reminder' reminder class='spec-reminder-item'}}
+          {{reminder.title}}
+          {{/link-to}}
+          <div>{{reminder.date}}</div>
+        </li>
+      {{/each}}
   </ul>
 {{else}}
   <h2 id="spec-welcome-header"> Welcome to remEMBER</h2>
@@ -21,3 +22,4 @@
 {{/if}}
 
 {{outlet}}
+</section>
