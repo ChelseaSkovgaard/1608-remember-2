@@ -63,3 +63,15 @@ test('clicking the save reminder button renders a new reminder', function(assert
       assert.equal(find('.spec-reminder-notes').text().trim(), 'Do not forget!', 'should show new reminder notes');
     });
   });
+
+  test('if there are already reminders listed there should be no welcome text or create new reminder button', function(assert){
+    server.createList('reminder', 5);
+
+    visit('/');
+
+    andThen(function() {
+      assert.equal(currentURL(), '/reminders');
+      assert.equal(find('#spec-create-new-reminder-btn').length, 0);
+      assert.equal(find('#spec-welcome-header').length, 0);
+    });
+  });
