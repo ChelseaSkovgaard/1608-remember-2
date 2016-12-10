@@ -32,10 +32,10 @@ test('clicking on an individual item', function(assert) {
 });
 
 test('clicking the create new reminder button redirects the url', function(assert){
-  server.createList('reminder', 5);
 
   visit('/');
   click('#spec-create-new-reminder-btn');
+
   andThen(function() {
     assert.equal(currentURL(), '/reminders/new');
     assert.equal(find('.new-reminder-input').length, 3);
