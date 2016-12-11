@@ -9,12 +9,12 @@ export default Ember.Component.extend({
 
   actions: {
     editReminder() {
-       const reminder = this.getProperties('title', 'date', 'notes');
-       reminder.date = new Date(reminder.date);
+      const edits = this.getProperties('editTitle', 'editDate', 'editNotes');
+      console.log(edits)
        this.get('store').findRecord('reminder', 1).then(() => {
-         this.set('title','');
-         this.set('date', '');
-         this.set('notes', '');
+         this.set('title', edits.editTitle);
+         this.set('date', edits.editDate);
+         this.set('notes', edits.editNotes);
        });
     }
   }
