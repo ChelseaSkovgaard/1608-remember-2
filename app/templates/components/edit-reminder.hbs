@@ -1,13 +1,13 @@
 <form class='edit-reminder-form' {{action "editReminder" on='submit'}}>
   <label> Title
-    {{input class="edit-reminder-input spec-title-input" value=editTitle
+    {{input class="edit-reminder-input spec-title-input" value=title
     }}
   </label>
   <label> Date
-    {{input class="edit-reminder-input spec-date-input" value=editDate type='date'}}
+    {{input class="edit-reminder-input spec-date-input" value=date type='date'}}
   </label>
   <label> Notes
-    {{input class="edit-reminder-input spec-note-input" value=editNotes}}
+    {{input class="edit-reminder-input spec-note-input" value=notes}}
   </label>
   <button id="spec-save-reminder-btn"> Save Edits </button>
 </form>
