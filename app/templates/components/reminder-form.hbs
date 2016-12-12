@@ -1,4 +1,4 @@
-  <form class='save-new-reminder-form' {{action "saveNewReminder" on='submit'}}>
+  <form class='save-new-reminder-form' >
     <label> Title
       {{input class="new-reminder-input spec-title-input" value=title}}
     </label>
@@ -8,6 +8,7 @@
     <label> Notes
       {{input class="new-reminder-input spec-note-input" value=notes}}
     </label>
-    <button id="spec-save-reminder-btn"> Save Reminder </button>
+    <button {{action "saveNewReminder" on='click'}} id="spec-save-reminder-btn"> Save New Reminder </button>
+    <button {{action "editReminder" on='click'}} id="spec-save-edits-btn"> Save Edits </button>
   </form>
   {{outlet}}
