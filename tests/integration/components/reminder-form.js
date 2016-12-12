@@ -1,8 +1,8 @@
 import { moduleForComponent, test } from 'ember-qunit';
-import Ember from 'ember';
 import hbs from 'htmlbars-inline-precompile';
+import Ember from 'ember';
 
-moduleForComponent('new-reminder-form', 'Integration | Component | new reminder form', {
+moduleForComponent('reminder-form', 'Integration | Component | edit reminder', {
   integration: true
 });
 
@@ -11,7 +11,7 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{new-reminder-form}}`);
-  assert.equal(Ember.$('.new-reminder-input').length, 3);
+  this.render(hbs`{{reminder-form}}`);
 
+  assert.equal(Ember.$('.reminder-form').length, 1);
 });
