@@ -1,9 +1,21 @@
 <section class="spec-individual-reminder-item">
-  <h3 class='spec-reminder-title'> {{model.title}}</h3>
-  <div class='spec-reminder-date'> {{model.date}}</div>
+  {{#if isEditing}}
+
+  <h2>Title{{input type='text' class='spec-edit-title' value=model.title}}</h2>
+  <p>Notes{{textarea class='spec-edit-notes'  value=model.notes}}</p>
+  <p>Date{{input type='date' class='spec-edit-date' value=model.date}}</p>
+  <button class='save' {{action 'saveReminder' model on 'submit'}}>Save</button>
+
+  {{else}}
+
+    <h1 class='spec-reminder-title'>{{model.title}}</h1>
+    <p class='spec-reminder-date'>{{model.date}} </p>
     {{#if model.notes}}
-      <div class='spec-reminder-notes'> {{model.notes}}</div>
+      <p class='spec-reminder-notes'>{{model.notes}}</p>
     {{/if}}
+    <button class='edit' {{action 'editReminder'}}>Edit</button>
+
+  {{/if}}
 </section>
 
 {{outlet}}
