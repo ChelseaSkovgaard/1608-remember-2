@@ -8,6 +8,11 @@
           {{reminder.title}}
           {{/link-to}}
           <div>{{reminder.date}}</div>
+          <button>
+            {{#link-to 'reminders.edit' id='spec-edit-reminder-btn'}}
+            EDIT
+            {{/link-to}}
+          </button>
         </li>
       {{/each}}
   </ul>
