@@ -15,5 +15,15 @@ export default Ember.Component.extend({
          this.setProperties({title: '', date: '', notes: ''});
        });
     }
+    editReminder(model) {
+      const edits = this.getProperties('title', 'date', 'notes');
+      edits.date = new Date(edits.date);
+       this.get('store').findRecord('reminder', params.reminder_id).then((edit) => {
+         edit.set('title', edits.title);
+         edit.set('date', edits.date);
+         edit.set('notes', edits.notes);
+        this.setProperties({title: '', date: '', notes: ''});
+       });
+    }
   }
 });
