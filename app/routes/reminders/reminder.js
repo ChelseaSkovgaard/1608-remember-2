@@ -6,7 +6,6 @@ export default Ember.Route.extend({
   },
   actions: {
     deleteReminder(model) {
-      console.log(model.id);
       model.destroyRecord('reminder', model.id);
       this.transitionTo('reminders');
     }

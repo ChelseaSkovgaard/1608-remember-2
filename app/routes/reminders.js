@@ -7,9 +7,8 @@ export default Ember.Route.extend({
 
   actions: {
     deleteReminder(model) {
-      this.get('store').findRecord('reminder',  model.id).then(() => {
-       model.destroyRecord('reminder', model.id);
-     });
+      let reminderToDelete = this.get('store').peekRecord('reminder',  model.id);
+       reminderToDelete.destroyRecord('reminder', model.id);
+     }
    }
-  }
 });

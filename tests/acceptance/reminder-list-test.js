@@ -120,3 +120,39 @@ test('clicking the save reminder button renders a new reminder', function(assert
         assert.equal(find('.unsaved').text().trim(), 'Unsaved Changes to Reminder', 'should show alert');
       });
 });
+
+test('reminders are deleted when delete button is clicked in list view', function(assert){
+  visit('/');
+  click('#spec-create-new-reminder-btn');
+  fillIn('.spec-title-input', 'New Reminder');
+  fillIn('.spec-note-input', 'Do not forget!');
+  click('.spec-save-edits-btn');
+  andThen(function(){
+    assert.equal(currentURL(), '/reminders');
+    assert.equal(find('.spec-reminder-item').length, 1, 'should show one newly added reminder');
+  });
+  click('.delete-btn');
+  andThen(function(){
+    assert.equal(find('.spec-reminder-item').length, 0, 'should show no reminders');
+  });
+})
+
+test('reminders are deleted when delete button is clicked both in individual reminder expanded view', function(assert){
+  visit('/');
+  click('#spec-create-new-reminder-btn');
+  fillIn('.spec-title-input', 'New Reminder');
+  fillIn('.spec-note-input', 'Do not forget!');
+  click('.spec-save-edits-btn');
+  andThen(function(){
+    assert.equal(currentURL(), '/reminders');
+    assert.equal(find('.spec-reminder-item').length, 1, 'should show one newly added reminder');
+  });
+  click('.spec-reminder-item')
+  andThen(function(){
+    assert.equal(currentURL(), '/reminders/1');
+  });
+  click('.delete-btn');
+  andThen(function(){
+    assert.equal(find('.spec-reminder-item').length, 0, 'should show no reminders');
+  });
+})
