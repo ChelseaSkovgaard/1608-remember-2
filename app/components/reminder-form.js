@@ -8,6 +8,11 @@ export default Ember.Component.extend({
       model.date = model.date || new Date();
       model.save();
       this.sendAction();
+    },
+    rollbackChanges(model) {
+      if(model.get('hasDirtyAttributes')) {
+        model.rollbackAttributes()
+      }
     }
   }
 });

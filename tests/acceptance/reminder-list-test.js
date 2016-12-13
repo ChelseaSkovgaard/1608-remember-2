@@ -73,4 +73,27 @@ test('clicking the save reminder button renders a new reminder', function(assert
       assert.equal(currentURL(), '/reminders');
       assert.equal(find('#spec-welcome-header').length, 0);
     });
+});
+    test('clicking the rollback changes reverts to the original', function(assert){
+
+        visit('/');
+        click('#spec-create-new-reminder-btn');
+        andThen(function() {
+          assert.equal(currentURL(), '/reminders/new');
+        });
+
+        fillIn('.spec-title-input', 'New Reminder');
+        fillIn('.spec-date-input', '2016-12-10');
+        fillIn('.spec-note-input', 'Do not forget!');
+        click('.spec-save-edits-btn');
+
+        click('.spec-edit-reminder-btn')
+
+        fillIn('.spec-note-input', 'Forget this!');
+
+        click('.spec-revert-changes');
+
+        andThen(function(){
+          assert.equal(find('.spec-reminder-item').text().trim(), 'New Reminder', 'should show original note');
+        });
   });

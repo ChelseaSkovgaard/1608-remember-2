@@ -9,4 +9,6 @@
       {{input class="new-reminder-input spec-note-input" value=model.notes}}
     </label>
     <button {{action "saveReminder" model on='click'}} class="spec-save-edits-btn">   {{text}}</button>
+    <button {{action "rollbackChanges" model on='click'}} class="spec-revert-changes">
+      {{text-rollback}}</button>
   </form>
