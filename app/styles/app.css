@@ -11,3 +11,8 @@
   padding: 5px;
   margin: 10px;
 }
+
+.unsaved {
+  color: red;
+  font-weight: bold;
+}
