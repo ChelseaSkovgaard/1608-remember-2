@@ -4,10 +4,10 @@
     <h2> Reminder List </h2>
     <ul>
       {{#each model as |reminder|}}
-      <span class="unsaved">
-        {{if reminder.hasDirtyAttributes "Unsaved Changes to Reminder"}}
-      </span>
         <li >
+          <span class="unsaved">
+            {{if reminder.hasDirtyAttributes "Unsaved Changes to Reminder"}}
+          </span>
           {{#link-to 'reminders.reminder' reminder class='spec-reminder-item'}}
             {{reminder.title}}
           {{/link-to}}
