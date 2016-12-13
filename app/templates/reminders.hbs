@@ -5,7 +5,7 @@
     <ul>
       {{#each model as |reminder|}}
       <span class="unsaved">
-      {{if reminder.hasDirtyAttributes "Unsaved Changes to Reminder"}}
+        {{if reminder.hasDirtyAttributes "Unsaved Changes to Reminder"}}
       </span>
         <li >
           {{#link-to 'reminders.reminder' reminder class='spec-reminder-item'}}
