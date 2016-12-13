@@ -9,21 +9,21 @@
           {{/link-to}}
           <div>{{reminder.date}}</div>
           <button>
-            {{#link-to 'reminders.edit' id='spec-edit-reminder-btn'}}
+            {{#link-to 'reminders.edit' reminder.id class='spec-edit-reminder-btn'}}
             EDIT
             {{/link-to}}
           </button>
         </li>
       {{/each}}
   </ul>
+  <button>
+    {{#link-to 'reminders.new' id='spec-create-new-reminder-btn'}}
+    Create New Reminder
+    {{/link-to}}
+  </button>
 {{else}}
   <h2 id="spec-welcome-header"> Welcome to remEMBER</h2>
   <p> Please click below to add a new reminder to your list</p>
-  <button>
-    {{#link-to 'reminders.new' id='spec-create-new-reminder-btn'}}
-      Create New Reminder
-    {{/link-to}}
-  </button>
 {{/if}}
 </section>
 

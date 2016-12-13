@@ -8,22 +8,25 @@ export default Ember.Component.extend({
   notes: '',
 
   actions: {
-    saveNewReminder() {
-       const reminder = this.getProperties('title', 'date', 'notes');
-       reminder.date = new Date(reminder.date);
-       this.get('store').createRecord('reminder', reminder).save().then(() => {
-         this.setProperties({title: '', date: '', notes: ''});
-       });
-    },
-    editReminder() {
-   const edits = this.getProperties('title', 'date', 'notes');
-   edits.date = new Date(edits.date);
-    this.get('store').findRecord('reminder', 1).then((edit) => {
-      edit.set('title', edits.title);
-      edit.set('date', edits.date);
-      edit.set('notes', edits.notes);
-     this.setProperties({title: '', date: '', notes: ''});
-    });
- }
+    saveNewReminder(model) {
+      //  const reminder = this.getProperties('title', 'date', 'notes');
+       model.date = model.date || new Date();
+      //  this.get('store').createRecord('reminder', model)
+      console.log('yay')
+       model.save().then(()=> {
+         this.sendAction()
+       })
+    }
+ //    editReminder(model) {
+ //      console.log(model)
+ //   const edits = this.getProperties('title', 'date', 'notes');
+ //   edits.date = edits.date || new Date(edits.date);
+ //    this.get('store').findRecord('reminder', model.id).then((edit) => {
+ //      edit.set('title', edits.title);
+ //      edit.set('date', edits.date);
+ //      edit.set('notes', edits.notes);
+ //     this.setProperties({title: '', date: '', notes: ''});
+ //    });
+ // }
 }
 });
