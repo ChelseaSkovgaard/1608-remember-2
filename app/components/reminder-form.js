@@ -6,8 +6,8 @@ export default Ember.Component.extend({
   actions: {
     saveNewReminder(model) {
        model.date = model.date || new Date();
-       model.save()
-      this.sendAction()
+       model.save();
+      this.sendAction();
     }
   }
 });
