@@ -59,7 +59,7 @@ test('clicking the save reminder button renders a new reminder', function(assert
     click('.spec-reminder-item');
     andThen(function(){
       assert.equal(find('.spec-reminder-title').text().trim(), 'New Reminder', 'should show new reminder title');
-      assert.equal(find('.spec-reminder-date').text().trim(), 'Fri Dec 09 2016 17:00:00 GMT-0700 (MST)', 'should show formatted date');
+      assert.equal(find('.spec-reminder-date').text().trim(), '2016-12-10', 'should show formatted date');
       assert.equal(find('.spec-reminder-notes').text().trim(), 'Do not forget!', 'should show new reminder notes');
     });
   });
