@@ -3,19 +3,19 @@
   {{#if model}}
     <h2> Reminder List </h2>
     <ul>
-        {{#each model as |reminder|}}
-          <li >
-            {{#link-to 'reminders.reminder' reminder class='spec-reminder-item'}}
+      {{#each model as |reminder|}}
+        <li >
+          {{#link-to 'reminders.reminder' reminder class='spec-reminder-item'}}
             {{reminder.title}}
-            {{/link-to}}
-            <div>{{reminder.date}}</div>
-            <button>
-              {{#link-to 'reminders.edit' reminder class='spec-edit-reminder-btn'}}
+          {{/link-to}}
+          <div>{{reminder.date}}</div>
+          <button>
+            {{#link-to 'reminders.edit' reminder class='spec-edit-reminder-btn'}}
               EDIT
-              {{/link-to}}
-            </button>
-          </li>
-        {{/each}}
+            {{/link-to}}
+          </button>
+        </li>
+      {{/each}}
     </ul>
 
   {{else}}
@@ -25,7 +25,7 @@
 
     <button>
       {{#link-to 'reminders.new' id='spec-create-new-reminder-btn'}}
-      Create New Reminder
+        Create New Reminder
       {{/link-to}}
     </button>
 
