@@ -6,7 +6,6 @@ export default Ember.Route.extend({
   },
   actions: {
     saveNewReminder() {
-      console.log('fuck')
       this.transitionTo('reminders')
     }
   }
