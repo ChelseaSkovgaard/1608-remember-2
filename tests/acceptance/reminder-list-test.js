@@ -52,7 +52,7 @@ test('clicking the save reminder button renders a new reminder', function(assert
     fillIn('.spec-title-input', 'New Reminder');
     fillIn('.spec-date-input', '2016-12-10');
     fillIn('.spec-note-input', 'Do not forget!');
-    click('#spec-save-reminder-btn');
+    click('.spec-save-edits-btn');
     andThen(function(){
       assert.equal(find('.spec-reminder-item').length, 1, 'should show one newly added reminder');
     });
@@ -64,14 +64,13 @@ test('clicking the save reminder button renders a new reminder', function(assert
     });
   });
 
-  test('if there are already reminders listed there should be no welcome text or create new reminder button', function(assert){
+  test('if there are already reminders listed there should be no welcome text', function(assert){
     server.createList('reminder', 5);
 
     visit('/');
 
     andThen(function() {
       assert.equal(currentURL(), '/reminders');
-      assert.equal(find('#spec-create-new-reminder-btn').length, 0);
       assert.equal(find('#spec-welcome-header').length, 0);
     });
   });

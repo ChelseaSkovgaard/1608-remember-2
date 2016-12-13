@@ -2,7 +2,7 @@ import { moduleForComponent, test } from 'ember-qunit';
 import Ember from 'ember';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('new-reminder-form', 'Integration | Component | new reminder form', {
+moduleForComponent('reminder-form', 'Integration | Component | reminder form', {
   integration: true
 });
 
