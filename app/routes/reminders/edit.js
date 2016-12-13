@@ -3,5 +3,10 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model(params) {
     return this.get('store').find('reminder', params.reminder_id);
+  },
+  actions: {
+    saveNewReminder() {
+      this.transitionTo('reminders')
+    }
   }
 });
