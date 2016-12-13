@@ -4,6 +4,9 @@
     {{#if model.notes}}
       <div class='spec-reminder-notes'> {{model.notes}}</div>
     {{/if}}
+    <button class='delete-btn' {{action 'deleteReminder' model}}>
+      DELETE
+    </button>
 </section>
 
 {{outlet}}
