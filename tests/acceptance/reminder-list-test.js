@@ -135,7 +135,7 @@ test('reminders are deleted when delete button is clicked in list view', functio
   andThen(function(){
     assert.equal(find('.spec-reminder-item').length, 0, 'should show no reminders');
   });
-})
+});
 
 test('reminders are deleted when delete button is clicked both in individual reminder expanded view', function(assert){
   visit('/');
@@ -147,7 +147,7 @@ test('reminders are deleted when delete button is clicked both in individual rem
     assert.equal(currentURL(), '/reminders');
     assert.equal(find('.spec-reminder-item').length, 1, 'should show one newly added reminder');
   });
-  click('.spec-reminder-item')
+  click('.spec-reminder-item');
   andThen(function(){
     assert.equal(currentURL(), '/reminders/1');
   });
@@ -155,4 +155,4 @@ test('reminders are deleted when delete button is clicked both in individual rem
   andThen(function(){
     assert.equal(find('.spec-reminder-item').length, 0, 'should show no reminders');
   });
-})
+});
