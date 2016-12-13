@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     return this.get('store').createRecord('reminder');
   },
   actions: {
-    saveNewReminder() {
+    saveReminder() {
       this.transitionTo('reminders');
     }
   }

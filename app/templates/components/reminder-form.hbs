@@ -3,10 +3,10 @@
       {{input class="new-reminder-input spec-title-input" value=model.title}}
     </label>
     <label> Date
-      {{input class="new-reminder-input spec-date-input" value=model.date type='date'}}
+      {{bootstrap-datepicker format="mm.dd.yy" class="new-reminder-input spec-date-input" value=model.date }}
     </label>
     <label> Notes
       {{input class="new-reminder-input spec-note-input" value=model.notes}}
     </label>
-    <button {{action "saveNewReminder" model on='click'}} class="spec-save-edits-btn">   {{text}}</button>
+    <button {{action "saveReminder" model on='click'}} class="spec-save-edits-btn">   {{text}}</button>
   </form>
